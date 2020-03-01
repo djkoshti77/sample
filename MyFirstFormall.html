@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+  <head>
+     <meta charset="utf-8">
+     <style type="css">
+	 body
+{
+	background-color:#e6ffe6;
+	font-family:"Times New Roman",Times,serif;
+	font-size:large;
+	
+	 
+}
+img{
+	display: block;
+    margin-left: 80%;
+    margin-right: 50%;
+    width: 40%;
+}
+h1{
+	color:#336600;
+}
+table
+{
+	width:550px;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+td
+{
+	vertical-align:top;
+	padding:5px;
+	word-wrap:break-word;
+}
+#fullpage
+{
+	margin:100px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+  margin-left: 80%;
+    margin-right: 50%;
+	width:50%;
+}
+img {
+  width: 50%;
+  height: 10%;
+}
+.input_col{
+	
+	text-align:left;
+}
+.ttl_col{
+	
+	text-align:left;
+}
+.feedbac_col{
+	text-align:left;
+	vertical-align:middle;
+	color:LightGray;
+	font-size:small;
+	
+}
+
+	 </style>
+     <title>FORM</title>
+     <script function valF_Name()
+{
+	var fname=document.getElementById("firstName").value;
+	var rel=/^[a-zA-Z\s\'\-]{2,15}$/;
+	if(rel.test(fname)) 
+	{
+		document.getElementById("F_Nameprompt").style.color="green";
+	    document.getElementById("F_Nameprompt").innerHTML="<strong>valid</Strong>";
+	    return true;
+	}
+	
+	else
+	{
+		document.getElementById("F_Nameprompt").style.color="red";
+	    document.getElementById("F_Nameprompt").innerHTML="<strong>Enter 2 to 15 characters</Strong>";
+		return false;
+	}
+	
+}
+function valL_Name()
+{
+	var lname=document.getElementById("lastName").value;
+	var re2=/^[a-zA-Z\s\'\-]{2,15}$/;
+	if(re2.test(lname))
+	{
+		document.getElementById("L_Nameprompt").style.color="green";
+	    document.getElementById("L_Nameprompt").innerHTML="<strong>valid</Strong>";
+	    return true;
+	}
+	
+	else
+	{
+		document.getElementById("L_Nameprompt").style.color="red";
+	    document.getElementById("L_Nameprompt").innerHTML="<strong>Enter 2 to 15 characters</Strong>";
+		return false;
+	}
+	
+}
+
+function valM_No()
+{
+	var number=document.getElementById("Mnumber").value;
+	var re3=/^\d{3}-\d{3}-\d{4}$/;
+	if(re3.test(number))
+	{
+		document.getElementById("M_Noprompt").style.color="green";
+	    document.getElementById("M_Noprompt").innerHTML="<strong>valid</Strong>";
+	    return (true);
+	}
+	
+	else
+	{
+		document.getElementById("M_Noprompt").style.color="red";
+	    document.getElementById("M_Noprompt").innerHTML="<strong>Enter valid phone number</Strong>";
+		return (false);
+	}
+	
+}
+function Summary()
+{
+	document.getElementById("Applicatin_Received").innerHTML="<h2>Application Received</h2>";
+	
+}
+
+></script>
+  </head>
+  
+  <body>
+      <form action="#">
+	     <div id="fullpage">
+		    <h1>APPLICATION FORM</h1>
+			<table border="0">
+			  <tr>
+			     <td class="input_col"><img src="https://www.pngkey.com/png/full/188-1882170_fill-out-form-icon-form-icon-font-awesome.png">
+			  </tr>
+			  <tr>
+			     <td class="ttl_col"><b>First Name</b></td>
+				 <td class="input_col"><input name="firstName" id="firstName" type="text" onblur="valF_Name();"></td>
+				 <td class="feedbac_col"><span id="F_Nameprompt">&nbsp;</span></td>
+			  </tr>
+              <tr>
+			     <td class="ttl_col"><b>Last Name</b></td>
+				 <td class="input_col"><input name="lastName" id="lastName" type="text" onblur="valL_Name();"></td>
+				 <td class="feedbac_col"><span id="L_Nameprompt">&nbsp;</span></td>
+              </tr>	
+              <tr>
+			     <td class="ttl_col"><b>Mobile number</b></td>
+				 <td class="input_col"><input name="Mnumber" id="Mnumber" type="text" onblur="valM_No();" placeholder="xxx-xxx-xxxx"></td>
+				 <td class="feedbac_col"><span id="M_Noprompt">xxx-xxx-xxxx</span></td>
+              </tr>	
+     		  <tr>
+			     <td class="ttl_col"><b>Age</b></td>
+				 <td class="input_col"><input name="Age" type="number" onblur="val_Age();"></td>
+				 <td class="feedbac_col"><span id="age"></span></td>
+              </tr>		
+              <tr>
+			     <td class="ttl_col"><b>Experience</b></td>
+				 <td class="input_col"><input name="Exp" type="number" required"></td>
+				 <td class="feedbac_col"><span id="Exp">1&ndash;10(years)</span></td>
+              </tr>	
+              <tr>
+			     <td class="ttl_col"><b>Post</b></td>
+				 <td class="input_col"><input type="checkbox" name="post" value="Faculty">Faculty<br>
+                			           <input type="checkbox" name="post" value="Receptionist">Receptionist<br>
+									   <input type="checkbox" name="post" value="Office Work">Office Work<br> </td>
+			  </tr>	 
+              <tr>
+			     <td class="ttl_col"><b>Available for</b></td>
+				 <td class="input_col"><input type="radio" name="Available for" value="Full time"> Full time<br>
+				                       <input type="radio" name="Available for" value="Part time"> Part time<br>
+              </tr>			  
+              <tr>
+			     <td class="ttl_col"><b>Date of Birth</b></td>
+				 <td class="input_col"><input type="date" name="DOB"</td>
+			  </tr>	 
+              <tr>
+			     <td class="button" id="button" colspan="3"><span class="buttonBG" onclick="Summary();"><b>Apply Now</b></span></td>
+              </tr>		
+			</table>
+		</div>	
+        <span id="Applicatin_Received">&nbsp;</span>		
+	 </form>		  
+  </body>
